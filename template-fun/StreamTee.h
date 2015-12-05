@@ -6,10 +6,7 @@ namespace dboone {
 	using StandardEndLine = CoutType&(CoutType&);
 	using StandardEndLinePtr = StandardEndLine*;
 
-	template <typename TStreamHead>
-	void streamTee(StandardEndLinePtr manip, TStreamHead& head) {
-		manip(head);
-	}
+	void streamTee(StandardEndLinePtr) {}
 
 	template <typename TStreamHead, typename... TStreamTail>
 	void streamTee(StandardEndLinePtr manip, TStreamHead& head, TStreamTail&... tail) {
@@ -17,13 +14,11 @@ namespace dboone {
 		streamTee(manip, tail...);
 	}
 
-	template <typename TOutput, typename TStreamHead>
-	void streamTee(TOutput output, TStreamHead& head) {
-		head << output;
-	}
+	template <typename TOutput>
+	void streamTee(const TOutput&) {}
 
 	template <typename TOutput, typename TStreamHead, typename... TStreamTail>
-	void streamTee(TOutput output, TStreamHead& head, TStreamTail&... tail) {
+	void streamTee(const TOutput& output, TStreamHead& head, TStreamTail&... tail) {
 		head << output;
 		streamTee(output, tail...);
 	}
