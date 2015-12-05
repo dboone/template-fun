@@ -7,8 +7,12 @@ Template partial specialization involves having a special case for specific temp
 
 ``` cpp
 template<size_t n>
-struct fact
-{
+struct fact {
 	constexpr static auto value = n * fact<n - 1>::value;
 };
 ```
+
+## TODO
+* Explicit specialization
+* Declaration order dependency
+* Stream tee
