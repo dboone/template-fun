@@ -148,6 +148,7 @@
     <ClInclude Include="Copy.h" />
     <ClInclude Include="Factorial.h" />
     <ClInclude Include="Fibonacci.h" />
+    <ClInclude Include="FizzBuzz.h" />
     <ClInclude Include="StreamTee.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

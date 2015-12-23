@@ -4,6 +4,20 @@
 #include "Factorial.h"
 #include "Fibonacci.h"
 #include "StreamTee.h"
+#include "FizzBuzz.h"
+
+void testFizzBuzz() {
+    std::cout << FizzBuzz<0>::value << std::endl;
+    std::cout << FizzBuzz<1>::value << std::endl;
+    std::cout << FizzBuzz<2>::value << std::endl;
+    std::cout << FizzBuzz<3>::value << std::endl;
+    std::cout << FizzBuzz<4>::value << std::endl;
+    std::cout << FizzBuzz<5>::value << std::endl;
+    std::cout << FizzBuzz<6>::value << std::endl;
+    std::cout << FizzBuzz<15>::value << std::endl;
+    std::cout << FizzBuzz<28>::value << std::endl;
+    std::cout << FizzBuzz<30>::value << std::endl;
+}
 
 int main(int argc, char* argv) {
 	using dboone::copy;
@@ -19,6 +33,8 @@ int main(int argc, char* argv) {
 	std::ofstream out("test.log");
 	streamTee("Hello, world!", std::cout, out);
 	streamTee(std::endl, std::cout, out);
+
+    testFizzBuzz();
 
 	return 0;
 }
