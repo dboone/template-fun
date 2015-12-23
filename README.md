@@ -2,17 +2,16 @@
 A collection of my experiments with templates.
 
 
-## Partial Specialization
-Template partial specialization involves having a special case for specific template type(s). For example, `std::vector<T>` has a partial specialization for when `T` is of type `bool`, where each bool occupies one bit. The example below is a partial specialization where `n` is of type `size_t`.
+## Specialization
+Template specialization involves having special cases for specific template type(s). For example, `std::vector<T>` has a specialization for when `T` is of type `bool`, where each bool occupies one bit. The example below is a *full specialization* where `n` is of type `size_t`. Full specialization refers to having a specialization for all template parameters. If the `fact` struct had some other template parameter(s), e.g. `template <typename T, size_t n> //...`, then it would be considered a *partial specialization*.
 
 ``` cpp
-template<size_t n>
+template <size_t n>
 struct fact {
 	constexpr static auto value = n * fact<n - 1>::value;
 };
 ```
 
 ## TODO
-* Explicit specialization
 * Declaration order dependency
 * Stream tee
