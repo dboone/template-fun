@@ -5,10 +5,10 @@
 template <typename T>
 struct add_const_ref
 {
-    typedef typename std::conditional<
+    using value = typename std::conditional<
         std::is_reference<T>::value,
         T,
-        const T&>::type value;
+        const T&>::type;
 };
 
 static_assert(
