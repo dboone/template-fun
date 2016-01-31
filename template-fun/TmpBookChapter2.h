@@ -16,11 +16,11 @@ struct add_const_ref
 };
 
 static_assert(
-    std::is_same< add_const_ref<double>::value,
+    std::is_same<add_const_ref<double>::value,
     const double&>::value,
     "Non-reference type should return const reference!");
 
 static_assert(
-    std::is_same< add_const_ref<double&>::value,
+    std::is_same<add_const_ref<double&>::value,
     double&>::value,
     "Reference type should return reference!");
