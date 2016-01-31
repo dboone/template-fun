@@ -2,17 +2,13 @@
 
 #include <type_traits>
 
-template <typename T, bool select>
-struct add_const_ref_impl
-{
-    typedef typename std::conditional<select, T, const T&>::type value;
-};
-
 template <typename T>
 struct add_const_ref
 {
-    static const bool select = std::is_reference<T>::value;
-    typedef typename add_const_ref_impl<T, select>::value value;
+    typedef typename std::conditional<
+        std::is_reference<T>::value,
+        T,
+        const T&>::type value;
 };
 
 static_assert(
