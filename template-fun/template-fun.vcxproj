@@ -150,6 +150,7 @@
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="FizzBuzz.h" />
     <ClInclude Include="StreamTee.h" />
+    <ClInclude Include="TmpBookChapter2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
