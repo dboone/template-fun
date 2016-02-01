@@ -6,9 +6,8 @@ template <typename T>
 struct add_const_ref
 {
     using value = typename std::add_lvalue_reference<
-        typename std::add_const< T >::type >::type;
+        typename std::add_const<T>::type>::type;
 };
-
 
 template <typename T>
 struct test_add_const_ref
