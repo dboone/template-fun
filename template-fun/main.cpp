@@ -5,6 +5,12 @@
 #include "Fibonacci.h"
 #include "StreamTee.h"
 #include "FizzBuzz.h"
+#include "TmpBookChapter2.h"
+
+void testTmpChapter2() {
+    test_add_const_ref<double> d;
+    test_add_const_ref<int> i;
+}
 
 void testFizzBuzz() {
     std::cout << FizzBuzz<0>::value << std::endl;
