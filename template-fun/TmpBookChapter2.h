@@ -5,10 +5,8 @@
 template <typename T>
 struct add_const_ref
 {
-    using value = typename std::conditional<
-        std::is_reference<T>::value,
-        T,
-        const T&>::type;
+    using value = typename std::add_lvalue_reference<
+        typename std::add_const< T >::type >::type;
 };
 
 static_assert(
